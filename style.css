@@ -1,17 +1,30 @@
 @font-face {
-  font-family: stars;
-  src: url("https://db.onlinewebfonts.com/t/661bf1532b87a1df22906f51cfe17e93.woff2") format("woff2");
+  font-family: medea;
+  src: url("font/ITC Medea W01 Extra Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: droid;
+  src: url("font/droid.otf") format("opentype");
+}
+
+h1 {
+  color: white;
+  font-family: droid, sans-serif;
+  text-align: center;
+  font-weight: normal;
+  font-size: xxx-large;
 }
 
 #now {
-  font-family: stars, "Arial", sans-serif;
+  font-family: medea, "Arial", sans-serif;
   color: white;
   padding: 2em;
   width: 1000px;
 }
 
-.bignum {
-  word-spacing : -.25em;
+#galactic_years {
+  word-spacing: -.25em; 
 }
 
 @media only screen and (max-width: 1000px) {
@@ -37,3 +50,19 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+
+footer>a {
+  text-decoration: none;
+  color: white;
+}
+
+footer>a:hover {
+  text-decoration:none;
+  color: white;
+}
+
+footer>a:visited {
+  text-decoration:none;
+  color: white;
+}
+

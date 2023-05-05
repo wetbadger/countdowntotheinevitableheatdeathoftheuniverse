@@ -268,7 +268,7 @@ function decrementTimer() {
             } else {
               m2 = "ia";
             }
-            if (galacticYear <= -1) {
+            if (millenium <= -1) {
               galacticYear--;
               if (galacticYear == 1) {
                 g = "";

@@ -197,13 +197,6 @@ function resetAll(n) {
       g = "s";
     }
 
-  let separator = ","+space;
-  bignum1.innerHTML = galacticYear.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
-  bigtext1.innerHTML = " galactic year"+g+", ";
-
-  bignum2.innerHTML = millenium.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
-  bigtext2.innerHTML = " millen"+m2+", ";
-
   yearElem.innerHTML = year + " year"+y+", ";
 
   dayElem.innerHTML = day + " day"+d+", ";
@@ -213,6 +206,13 @@ function resetAll(n) {
   minuteElem.innerHTML = minute + " minute"+m+", ";
 
   secondElem.innerHTML = "and " + second + " second" + s + " until the end of the universe.";
+	
+  let separator = ","+space;
+  bignum1.innerHTML = galacticYear.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  bigtext1.innerHTML = " galactic year"+g+", ";
+
+  bignum2.innerHTML = millenium.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  bigtext2.innerHTML = " millen"+m2+", ";
 
 }
 
@@ -230,7 +230,7 @@ function decrementTimer() {
     resetAll(endOfUniverse - BigInt(now));
     clearInterval(t);
     t=setInterval(decrementTimer,1000);
-}
+  }
   second--;
   if (second == 1) {
     s = "";

@@ -4,13 +4,13 @@
 }
 
 @font-face {
-  font-family: droid;
-  src: url("font/droid.otf") format("opentype");
+  font-family: sans;
+  src: url("font/HelveticaNeue-MediumCond.otf") format("opentype");
 }
 
 h1 {
   color: white;
-  font-family: droid, sans-serif;
+  font-family: sans, sans-serif;
   text-align: center;
   font-weight: normal;
 }

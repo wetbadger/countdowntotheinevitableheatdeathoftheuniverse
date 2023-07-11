@@ -1,13 +1,32 @@
 @font-face {
-  font-family: stars;
-  src: url("https://db.onlinewebfonts.com/t/661bf1532b87a1df22906f51cfe17e93.woff2") format("woff2");
+  font-family: mono;
+  src: url("font/Akkurat-Mono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: sans;
+  src: url("font/HelveticaNeue-MediumCond.otf") format("opentype");
+}
+
+h1 {
+  color: white;
+  font-family: sans, sans-serif;
+  text-align: center;
+  font-weight: normal;
+}
+
+h3 {
+  font-weight: normal;
+  font-style: italic;
 }
 
 #now {
-  font-family: stars, "Arial", sans-serif;
+  font-family: mono, monospace;
   color: white;
   padding: 2em;
-  width: 1000px;
+  width: 40%;
+  margin: auto;
+  text-align:center;
 }
 
 .bignum {
@@ -36,4 +55,23 @@ body {
   height: 100vh;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.space {
+  font-size: 8px;
+}
+
+footer>a {
+  text-decoration: none;
+  color: white;
+}
+
+footer>a:hover {
+  text-decoration:none;
+  color: white;
+}
+
+footer>a:visited {
+  text-decoration:none;
+  color: white;
 }

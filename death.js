@@ -58,6 +58,9 @@ function formatTime(n) {
   } else {
     s = "s";
   }
+	
+  //invisible space between numbers, allowing the big number to "wrap"
+  let space = "<span class='space'> </span>";
 
   //create a number and some text
   let galacticYearText = document.createTextNode(galacticYear.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ")); 
@@ -65,6 +68,7 @@ function formatTime(n) {
 
   //add the new text elements to another element
   bignum1.appendChild(galacticYearText);
+  bignum1.innerHTML = bignum1.innerHTML.replace(/\s/g, space);
   bigtext1.appendChild(galacticYearText2);
   galacticYearElem.appendChild(bignum1);
   galacticYearElem.appendChild(bigtext1);
@@ -81,6 +85,7 @@ function formatTime(n) {
 
   bignum2.appendChild(milleniumText);
   bigtext2.appendChild(milleniumText2);
+  bignum2.innerHTML = bignum2.innerHTML.replace(/\s/g, space);
   milleniumElem.appendChild(bignum2);
   milleniumElem.appendChild(bigtext2);
   
@@ -192,12 +197,6 @@ function resetAll(n) {
       g = "s";
     }
 
-  bignum1.innerHTML = galacticYear.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ");
-  bigtext1.innerHTML = " galactic year"+g+", ";
-
-  bignum2.innerHTML = millenium.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ");
-  bigtext2.innerHTML = " millen"+m2+", ";
-
   yearElem.innerHTML = year + " year"+y+", ";
 
   dayElem.innerHTML = day + " day"+d+", ";
@@ -207,11 +206,18 @@ function resetAll(n) {
   minuteElem.innerHTML = minute + " minute"+m+", ";
 
   secondElem.innerHTML = "and " + second + " second" + s + " until the end of the universe.";
+	
+  let separator = ","+space;
+  bignum1.innerHTML = galacticYear.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  bigtext1.innerHTML = " galactic year"+g+", ";
+
+  bignum2.innerHTML = millenium.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  bigtext2.innerHTML = " millen"+m2+", ";
 
 }
 
 var count = 0; 
-var T = 15;
+var T = 17;
 var t;
 function decrementTimer() {
   count ++ ;
@@ -224,7 +230,7 @@ function decrementTimer() {
     resetAll(endOfUniverse - BigInt(now));
     clearInterval(t);
     t=setInterval(decrementTimer,1000);
-}
+  }
   second--;
   if (second == 1) {
     s = "";
@@ -268,7 +274,7 @@ function decrementTimer() {
             } else {
               m2 = "ia";
             }
-            if (galacticYear <= -1) {
+            if (millenium <= -1) {
               galacticYear--;
               if (galacticYear == 1) {
                 g = "";
@@ -319,7 +325,7 @@ nowElem.appendChild(hourElem);
 nowElem.appendChild(minuteElem);
 nowElem.appendChild(secondElem);
 
-//ever second update the time we have left
+//every second update the time we have left
 var t=setInterval(decrementTimer,1000);
 
 //That's all!

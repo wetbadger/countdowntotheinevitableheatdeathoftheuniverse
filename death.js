@@ -24,6 +24,10 @@ var hour;
 var minute;
 var second;
 
+var count = 0; 
+var T = 17;
+var t;
+
 function resetAll(n) {
   
   galactic_year = n / BigInt(24 * 3600 * 365.2425 * 1000 * 230000);
@@ -68,16 +72,18 @@ function resetAll(n) {
 }
 
 function decrementTimer() {
-     
-  second--;  
+  count ++;
+  second--;
+  second = (second%BigInt(60) + BigInt(60))%BigInt(60);
   s = (second == 1) ? "" : "s"; 
   second_element.innerHTML = "and " + second + " second" + s + " until the end of the universe.";
   
-  if (second <= -1) {
+  if (count == T) {
     // resync user system time every time the seconds roll over
     // this is because, in our time, computers are not accurate
     // in addition counting leapseconds and leapyears is quite difficult
     // so we let the system clock deal with it
+    count = 0;
     let thing = new Date();
     now = Math.round(thing.getTime() / 1000);
     resetAll(end_of_universe - BigInt(now));

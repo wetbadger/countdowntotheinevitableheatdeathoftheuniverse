@@ -325,7 +325,7 @@ nowElem.appendChild(hourElem);
 nowElem.appendChild(minuteElem);
 nowElem.appendChild(secondElem);
 
-//every second update the time we have left
+//every second, update the time we have left
 var t=setInterval(decrementTimer,1000);
 
 //That's all!

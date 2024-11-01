@@ -7,14 +7,14 @@
 */
 
 
-//create some elements
-const galacticYearElem = document.createElement("p");
-const milleniumElem = document.createElement("p");
-const yearElem = document.createElement("p");
-const dayElem = document.createElement("p");
-const hourElem = document.createElement("p");
-const minuteElem = document.createElement("p");
-const secondElem = document.createElement("p");
+//get p elements
+const galacticYearElem = document.getElementById("galactic_years");
+const milleniumElem = document.getElementById("millenia");
+const yearElem = document.getElementById("years");
+const dayElem = document.getElementById("days");
+const hourElem = document.getElementById("hours");
+const minuteElem = document.getElementById("minutes");
+const secondElem = document.getElementById("seconds");
 
 //these are specially formatted to have commas
 //because they were very big numbers
@@ -309,21 +309,6 @@ let endOfUniverse = BigInt(2)**BigInt(512)-BigInt(1)
 let nowElem = document.getElementById("now");
 
 formatedTime = formatTime(endOfUniverse - BigInt(now));
-
-//Create some text that just has the word "approximately"
-let approx = document.createElement("h3");
-let approxText = document.createTextNode("Approximately ")
-approx.appendChild(approxText);
-
-//add all the elements to an element in the page
-nowElem.appendChild(approx);
-nowElem.appendChild(galacticYearElem);
-nowElem.appendChild(milleniumElem);
-nowElem.appendChild(yearElem);
-nowElem.appendChild(dayElem);
-nowElem.appendChild(hourElem);
-nowElem.appendChild(minuteElem);
-nowElem.appendChild(secondElem);
 
 //every second update the time we have left
 var t=setInterval(decrementTimer,1000);

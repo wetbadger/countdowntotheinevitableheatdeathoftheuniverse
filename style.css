@@ -72,4 +72,8 @@ footer>a:visited {
   text-decoration:none;
   color: white;
 }
-
+.important-information {
+  top: 100px;
+  position: relative;
+  text-align: center;
+}

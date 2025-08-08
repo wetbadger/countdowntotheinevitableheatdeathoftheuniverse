@@ -14,14 +14,14 @@ const linkElement = document.querySelector('#important-info > a');
 
 // Array of objects with background image URLs and corresponding links
 const contentArray = [
-  { url: 'info/info1.png', link: 'https://link1.com' },
-  { url: 'info/info2.png', link: 'https://link2.com' },
-  { url: 'info/info3.png', link: 'https://link3.com' },
+  { url: 'info/info1.png', link: 'https://ads.benalexandermedia.com' },
+  { url: 'info/info2.png', link: 'https://ads.benalexandermedia.com' },
+  { url: 'info/info3.png', link: 'https://ads.benalexandermedia.com' },
   // Add more entries as needed
 ];
 
 // Set the initial index
-let currentIndex = 0;
+let currentIndex = Math.floor(Math.random() * contentArray.length) + 1;
 
 // Function to change both the background image and link
 function updateContent() {

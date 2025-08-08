@@ -102,11 +102,10 @@ footer>a:visited {
 }
 
 #important-info #toggle-bar::after {
-  content: '✕';
-  font-size: 8px;
+  content: '\274C;';
+  font-size: 6px;
   flex-direction: row-reverse;
   display: flex;
-  color: black;
   padding: 1px 1px 0 0;
 }
 

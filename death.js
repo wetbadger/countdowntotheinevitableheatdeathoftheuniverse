@@ -311,7 +311,7 @@ let nowElem = document.getElementById("now");
 formatedTime = formatTime(endOfUniverse - BigInt(now));
 
 //Create some text that just has the word "approximately"
-let approx = document.createElement("h3");
+let approx = document.createElement("h2");
 let approxText = document.createTextNode("Approximately ")
 approx.appendChild(approxText);
 

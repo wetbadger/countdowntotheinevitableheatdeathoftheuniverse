@@ -15,7 +15,7 @@ h1 {
   font-weight: normal;
 }
 
-h3 {
+h2 {
   font-weight: normal;
   font-style: italic;
 }
@@ -33,15 +33,12 @@ h3 {
   word-spacing : -.25em;
 }
 
-@media only screen and (max-width: 1000px) {
-  #now {
-    width: 700px;
-  }
-}
-
 @media only screen and (max-width: 600px) {
   #now {
-    width: 350px;
+    width: auto;
+  }
+  #now > h2 {
+    word-break: break-all;
   }
 }
 
